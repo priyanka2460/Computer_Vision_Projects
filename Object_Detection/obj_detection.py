@@ -4,24 +4,32 @@
 
 # **Problem Statement - Object Detection**
 
+
 # Importing Required Libraries
+
 
 import cv2
 import imutils
 import time
 import numpy as np
 
+
 # Loading Pre-Trained Data Set
+
 
 net = cv2.dnn.readNetFromCaffe("MobileNetSSD_deploy.prototxt.txt","MobileNetSSD_deploy .caffemodel")
 confThresh = 0.6
 
+
 # Defining Object classes
+
 
 classLabels =  ["background","aeroplane","bicycle","bird", "boat", "bottle", "bus", "car", "cat", "chair", "diningtable","wall", "horse","motorbike","person", "person", "pottedplant", "sheep", "sofa", "train", "monitor display"]
 COLORS = np.random.uniform(0, 255, size=(len(classLabels),3 ))  
 
+
 # Performing Detection
+
 
 vs = cv2.VideoCapture("Video.mp4") 
 while True:
@@ -58,5 +66,6 @@ while True:
     
 vs.release()
 cv2.destroyAllWindows()
+
 
 # Thank You
